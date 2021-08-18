@@ -1,0 +1,29 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "app to create team profile generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "inquirer": "^8.1.2"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evanarbour/team-profile-generator.git"
+  },
+  "author": "Evan Arbour",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evanarbour/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/evanarbour/team-profile-generator#readme"
+}
