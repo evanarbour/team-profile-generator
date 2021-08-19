@@ -72,7 +72,7 @@ generateHTML = (data) => {
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
-        const role = employee.getRole()
+        const role = employee.getRole
         if (role === 'Manager') {
             const managerCard = createManager(employee)
             htmlArray.push(managerCard);
@@ -85,13 +85,54 @@ generateHTML = (data) => {
         };
     };
 
-    // put all of the cards together in the 'htmlArray'
+    // join all of the strings together (from employee data) into the 'htmlArray'
+   
     const teamCards = htmlArray.join('');
-    
+    console.log(htmlArray);
 
+    // create variable to pass the data to 'createTeamPage'
+    const teamPageData = createTeamPage(teamCards);
+    return teamPageData;
+    
 }
 
+// generate HTML file with 'teamCards' data
+const createTeamPage = (teamCards) => {
+    return `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>My Team</title>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css" integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+            <link href="https://fonts.googleapis.com/css2?family=Changa+One&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="./style.css">
+        </head>
+        <body>
+            <header>
+                <!-- background image -->
+            </header>
+            <div class="grid-x align-center text-center title-container">
+                <div class="cell">
+                    <h1 class="title">I got a really big team</h1>
+                    <h4>and they need some really big rings</h4>
+                </div>
+            </div>
 
+            <div class="grid-container">
+                <div class="grid-x grid-margin-x align-center text-center small-up-2 medium-up-3">
+                    ${teamCards}
+                </div>
+            </div>
+
+            <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js" 
+            integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o=" crossorigin="anonymous"></script>
+        </body>
+        </html>`
+}
 
 
 module.exports = generateHTML;

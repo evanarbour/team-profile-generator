@@ -120,8 +120,15 @@ const addEmployee = () => {
 addManager()
 // then add employee info
 .then(addEmployee)
-// then take data from teamArray and pass into generateHTML
+// then take data from 'teamArray' and pass into generateHTML
 .then(teamArray => {
     return generateHTML(teamArray)
+})
+
+.then((createTeamPage) => {
+    const fullHtmlPage = generateHTML(createTeamPage);
+
+    fs.writeFile('./dist/index.html', fullHtmlPage, (err) => 
+    err ? console.log(err) : console.log('Team Profile successfully created in index.html!'));
 })
 
