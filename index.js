@@ -47,9 +47,9 @@ const addManager = () => {
 // employee prompts 
 const addEmployee = () => {
     console.log(`
-    --------
+    ------------------------
     Adding Employees to Team
-    --------`);
+    ------------------------`);
 
     return inquirer.prompt ([
         {
@@ -106,6 +106,7 @@ const addEmployee = () => {
             return addEmployee(teamArray);
         } else {
             // if not, get completed array
+            console.log(`\n------Full Team------\n`)
             console.log(teamArray);
             return teamArray;
         } 

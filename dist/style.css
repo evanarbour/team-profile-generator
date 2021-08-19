@@ -1,0 +1,36 @@
+body,
+html {
+  height: 100%;
+}
+
+header {
+  background-image: url("https://minutes.co/wp-content/uploads/2020/01/shutterstock_426014434.png");
+  padding-top: 10px;
+  height: 40%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.title-container {
+  margin-bottom: 25px;
+}
+.title {
+  font-family: "Changa One", cursive;
+}
+
+.card {
+  border-radius: 8px;
+}
+
+.employee-name,
+.employee-role {
+  background-color: #0d449e;
+  color: white;
+  font-weight: bold;
+}
+
+.card-section {
+  background-color: rgb(245, 245, 245);
+}
