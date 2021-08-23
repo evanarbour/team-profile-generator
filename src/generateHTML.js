@@ -15,7 +15,7 @@ const createManager = (employee) => {
             </div>
             <div class="card-section">
                 <p>ID: ${employee.id} </p>
-                <p>Email: ${employee.email} </p>
+                <p>Email:<a href="mailto:${employee.email}"> ${employee.email}</a></p>
                 <p>Office Number: ${employee.officeNumber} </p>
             </div>
         </div>
@@ -36,8 +36,8 @@ const createEngineer = (employee) => {
             </div>
             <div class="card-section">
                 <p>ID: ${employee.id} </p>
-                <p>Email: ${employee.email}</p>
-                <p>Github: ${employee.github} </p>
+                <p>Email:<a href="mailto:${employee.email}"> ${employee.email}</a></p>
+                <p>Github:<a href="https://www.github.com/${employee.github}" target="_blank"> ${employee.github}</a></p>
             </div>
         </div>
     </div>`
@@ -56,7 +56,7 @@ const createIntern = (employee) => {
             </div>
             <div class="card-section">
                 <p>ID: ${employee.id}</p>
-                <p>Email: ${employee.email}</p>
+                <p>Email:<a href="mailto:${employee.email}"> ${employee.email}</a></p>
                 <p>School: ${employee.school}</p>
             </div>
         </div>
@@ -72,7 +72,7 @@ generateHTML = (data) => {
 
     for (let i = 0; i < data.length; i++) {
         const employee = data[i];
-        const role = employee.getRole
+        const role = employee.getRole();
         if (role === 'Manager') {
             const managerCard = createManager(employee)
             htmlArray.push(managerCard);
@@ -86,18 +86,23 @@ generateHTML = (data) => {
     };
 
     // join all of the strings together (from employee data) into the 'htmlArray'
-   
-    const teamCards = htmlArray.join('');
+    
+    console.log('----htmlArray HERE----');
     console.log(htmlArray);
 
+    // const teamCards = htmlArray.join('');
+   
+
     // create variable to pass the data to 'createTeamPage'
-    const teamPageData = createTeamPage(teamCards);
+    const teamPageData = createTeamPage(htmlArray);
+    console.log('---- FULL HTML CODE HERE ----')
+    console.log(teamPageData);
     return teamPageData;
     
 }
 
 // generate HTML file with 'teamCards' data
-const createTeamPage = (teamCards) => {
+const createTeamPage = (htmlArray) => {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -124,7 +129,7 @@ const createTeamPage = (teamCards) => {
 
             <div class="grid-container">
                 <div class="grid-x grid-margin-x align-center text-center small-up-2 medium-up-3">
-                    ${teamCards}
+                    ${htmlArray}
                 </div>
             </div>
 

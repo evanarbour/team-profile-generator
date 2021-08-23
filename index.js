@@ -92,7 +92,7 @@ const addEmployee = () => {
         let employee;
 
         if (role === "Engineer") {
-            employee = new Engineer (name, id, email, github);
+            employee = new Engineer (name, id, email, github,);
             console.log(employee);
         } else if (role === "Intern") {
             employee = new Intern (name, id, email, school);
@@ -125,10 +125,13 @@ addManager()
     return generateHTML(teamArray)
 })
 
-.then((createTeamPage) => {
-    const fullHtmlPage = generateHTML(createTeamPage);
+.then((teamPageData) => {
+    const fullHtmlPage = teamPageData;
 
     fs.writeFile('./dist/index.html', fullHtmlPage, (err) => 
     err ? console.log(err) : console.log('Team Profile successfully created in index.html!'));
 })
 
+.catch((error) => {
+    console.error("There was a problem creating your index.html", error)
+})
