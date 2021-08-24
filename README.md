@@ -17,8 +17,6 @@ Click [this link](https://drive.google.com/file/d/1TIfRDDWibs5C6hxfQbTfhR82Dd4Ia
 
 ![screenshot of team profile](./assets/images/team-profile-screenshot.png)
 
-Click here to [use the application](https://evanarbour.github.io/team-profile-generator/).
-
 ## License
 
 This project is licensed under the terms of the MIT license.
