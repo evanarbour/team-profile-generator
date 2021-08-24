@@ -13,9 +13,11 @@ This application was created to streamline the creation of team information by g
 
 ## Usage
 
-![screenshot of weather dashboard](./assets/images/dashboard.png)
+Click [this link](https://drive.google.com/file/d/1TIfRDDWibs5C6hxfQbTfhR82Dd4IafIB/view) to watch a video walkthrough of the application.
 
-Click [this link](https://evanarbour.github.io/weather-forecast/) to use the Weather Dashboard.
+![screenshot of team profile](./assets/images/team-profile-screenshot.png)
+
+Click here to [use the application](https://evanarbour.github.io/weather-forecast/).
 
 ## License
 
