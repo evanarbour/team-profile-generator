@@ -20,18 +20,48 @@ const addManager = () => {
             type: "input",
             name: "name", 
             message: "Team Manager's name:",
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             type: "input", 
             name: "id", 
             message: "Manager ID:",
+            validate: answer => {
+                const id = answer.match(
+                    /^[1-9]\d*$/
+                );
+                if (id) {
+                    return true;
+                }
+                return "Please enter a number greater than zero."
+            }
         }, {
             type: "input", 
             name: "email", 
-            message: "Manager email address:"
+            message: "Manager email address:",
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             type: "input", 
             name: "officeNumber", 
-            message: "Please enter office number:"
+            message: "Please enter office number:",
+            validate: answer => {
+                const officeNum = answer.match(
+                    /^[1-9]\d*$/
+                );
+                if (officeNum) {
+                    return true;
+                }
+                return "Please enter a number greater than zero."
+            }
         }
         
     ])
@@ -57,28 +87,67 @@ const addEmployee = () => {
             name: "role",
             message: "Please choose employee role:",
             choices: ['Engineer', 'Intern'],
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             type: "input", 
             name: "name", 
-            message: "Enter employee name:", 
+            message: "Enter employee name:",
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             type: "input", 
             name: "id", 
-            message: "Enter employee ID:", 
+            message: "Enter employee ID:",
+            validate: answer => {
+                const empId = answer.match(
+                    /^[1-9]\d*$/
+                );
+                if (empId) {
+                    return true;
+                }
+                return "Please enter a number greater than zero."
+            }
         }, {
             type: "input", 
             name: "email", 
-            message: "Enter employee email address:", 
+            message: "Enter employee email address:",
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             type: "input", 
             name: "github",
             message: "Please enter github username:", 
             when: (input) => input.role === "Engineer",
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             type: "input", 
             name: "school", 
             message: "Please enter school name:", 
             when: (input) => input.role === "Intern",
+            validate: answer => {
+                if (answer !== '') {
+                    return true;
+                } 
+                return 'Please enter at least one character.'
+            }
         }, {
             // confirm if adding more employees to the team
             type: "confirm", 
