@@ -14,21 +14,41 @@ header {
 }
 
 .title-container {
-  margin-bottom: 25px;
+  margin-bottom: 60px;
 }
+
 .title {
   font-family: "Changa One", cursive;
+  font-size: 65px;
 }
 
 .card {
   border-radius: 8px;
+  border: 2px solid darkgrey;
+  box-shadow: 8px 8px 10px 5px #eee;
 }
 
 .employee-name,
 .employee-role {
-  background-color: #0d449e;
+  background-color: #235ab3;
   color: white;
-  font-weight: bold;
+}
+
+.name,
+.role {
+  font-family: "Open Sans", sans-serif;
+}
+
+.name {
+  font-size: 35px;
+}
+
+.role {
+  font-size: 25px;
+}
+
+hr {
+  width: 85%;
 }
 
 .card-section {

@@ -5,18 +5,20 @@ const createManager = (employee) => {
     <div class="cell">
         <div class="card">
             <div class="employee-name">
-                <h3>${employee.name}</h3>
+                <h3 class="name">${employee.name}</h3>
             </div>
             <div class="employee-role">
-                <h5><span class="material-icons">
+                <h5 class="role"><span class="material-icons">
                     work
                     </span>
                     Manager</h5>
             </div>
             <div class="card-section">
-                <p>ID: ${employee.id} </p>
+                <p>ID: ${employee.id}</p>
+                <hr>
                 <p>Email:<a href="mailto:${employee.email}"> ${employee.email}</a></p>
-                <p>Office Number: ${employee.officeNumber} </p>
+                <hr>
+                <p>Office Number: ${employee.officeNumber}</p>
             </div>
         </div>
     </div>`
@@ -27,16 +29,18 @@ const createEngineer = (employee) => {
     <div class="cell">
         <div class="card">
             <div class="employee-name">
-                <h3>${employee.name}</h3>
+            <h3 class="name">${employee.name}</h3>
             </div>
             <div class="employee-role">
-              <h5><span class="material-icons">
+              <h5 class="role"><span class="material-icons">
                 engineering
                 </span> Engineer</h5>
             </div>
             <div class="card-section">
-                <p>ID: ${employee.id} </p>
+                <p>ID: ${employee.id}</p>
+                <hr>
                 <p>Email:<a href="mailto:${employee.email}"> ${employee.email}</a></p>
+                <hr>
                 <p>Github:<a href="https://www.github.com/${employee.github}" target="_blank"> ${employee.github}</a></p>
             </div>
         </div>
@@ -49,14 +53,16 @@ const createIntern = (employee) => {
     <div class="cell">
         <div class="card">
             <div class="employee-name">
-                <h3${employee.name}</h3>
+                <h3 class="name">${employee.name}</h3>
             </div>
             <div class="employee-role">
-                <h5><span class="material-icons">school</span> Intern</h5>
+                <h5 class="role"><span class="material-icons">school</span> Intern</h5>
             </div>
             <div class="card-section">
                 <p>ID: ${employee.id}</p>
+                <hr>
                 <p>Email:<a href="mailto:${employee.email}"> ${employee.email}</a></p>
+                <hr>
                 <p>School: ${employee.school}</p>
             </div>
         </div>
@@ -68,6 +74,7 @@ const createIntern = (employee) => {
 // then add those cards to an 'htmlArray'
 generateHTML = (data) => {
 
+    // all of the employee data from the user will be pushed into this array
     htmlArray = [];
 
     for (let i = 0; i < data.length; i++) {
@@ -85,16 +92,17 @@ generateHTML = (data) => {
         };
     };
 
-    // join all of the strings together (from employee data) into the 'htmlArray'
-    
+    // console log 'htmlArray' to ensure information is collected correctly
     console.log('----htmlArray HERE----');
     console.log(htmlArray);
 
-    // const teamCards = htmlArray.join('');
+    // use the .join(' ') method on 'htmlArray' to remove commas between objects
+    const teamCards = htmlArray.join(' ');
+    console.log(teamCards);
    
 
     // create variable to pass the data to 'createTeamPage'
-    const teamPageData = createTeamPage(htmlArray);
+    const teamPageData = createTeamPage(teamCards);
     console.log('---- FULL HTML CODE HERE ----')
     console.log(teamPageData);
     return teamPageData;
@@ -102,7 +110,7 @@ generateHTML = (data) => {
 }
 
 // generate HTML file with 'teamCards' data
-const createTeamPage = (htmlArray) => {
+const createTeamPage = (teamCards) => {
     return `
         <!DOCTYPE html>
         <html lang="en">
@@ -129,7 +137,7 @@ const createTeamPage = (htmlArray) => {
 
             <div class="grid-container">
                 <div class="grid-x grid-margin-x align-center text-center small-up-2 medium-up-3">
-                    ${htmlArray}
+                    ${teamCards}
                 </div>
             </div>
 
